@@ -1,4 +1,5 @@
-﻿#coding=utf-8
+================python参考=======
+#coding=utf-8
 import re
 import requests
 import urllib
@@ -222,3 +223,20 @@ for g in murl:
         g = g.decode('unicode-escape')
         print g
         count_sold(g,headers)
+        
+        
+        //=================其他语言参考=====
+        try {
+			JSONOfResult = new JSONObject(result);
+			if(JSONOfResult.getBoolean("error")==true){
+				return JSONOfResult.getString("errorMsg");
+			}
+			tmp = JSONOfResult.getString("name");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		try {
+			resultUrl = new URL("https://s.taobao.com/search?tfsid="+tmp+"&app=imgsearch");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
